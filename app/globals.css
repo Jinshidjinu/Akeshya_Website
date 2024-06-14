@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.nav-link {
+  @apply relative font-semibold text-white cursor-pointer text-[17px] w-fit;
+  
+  /* Initial state of the pseudo-element */
+  position: relative;
+}
+
+.image-component{
+  @apply  w-[250px] h-[150px] bg-[#F3F9FD] flex items-center justify-center
+}
