@@ -14,5 +14,20 @@
 }
 
 .image-component{
-  @apply  w-[250px] h-[150px] bg-[#F3F9FD] flex items-center justify-center
+  @apply  w-[200px] h-[150px] bg-[#F3F9FD] flex items-center justify-center
+}
+
+
+.list-item{
+  @apply flex gap-2 
+}
+
+.imougi-style{
+  @apply text-4xl mb-2 text-[#14279b]
+}
+.grid-align{
+  @apply bg-white p-4 flex items-center space-x-4
+}
+.numbers-align{
+  @apply font-bold text-[36px] text-[#222222]
 }

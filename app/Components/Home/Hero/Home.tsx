@@ -1,44 +1,30 @@
-import React from 'react'
-import Button from '../../Helper/Button'
-import Image from 'next/image'
+import React from 'react';
+import Button from '../../Shared/Button';
+import Image from 'next/image';
+
 const Home = () => {
   return (
-    <div>
-        <div className='w-full h-screen bg-green-600 flex'>
-            
-            <div className='w-1/2 h-full bg-white flex justify-center items-center '>
-               
-               <div className='w-[550px] h-[400px] bg-white text-4xl flex flex-col gap-2 '>
-                <div>
-
-                  <h1>Grow your business with</h1>
-                  <h1>Akeshya</h1>
-                </div>
-
-                  <div className='text-[19px] flex flex-col gap-8 '>
-                  <p className=''>
-                  We are team of talented website designers, developers & digital marketeers
-                  </p>
-        
-                  <Button content='Get Started' className='primary'/>
-                  </div>
-
-                
-
-                   </div>
-               </div>
-
-               <div className='w-1/2 h-full bg-white flex items-center  '>
-                 <Image src="/Assets/images/hero-img.png" alt='hero-image ' width={600} height={500}/>
-               </div>
-
-               
-              
-            </div>
-
+    <div className="w-full h-full bg-white flex md:flex-col-reverse  md:items-start items-center justify-center">
+      <div className="container mx-auto flex flex-col-reverse md:flex-col-reverse xl:flex-row ">
+        {/* Text content section */}
+        <div className="md:w-1/2 bg-white  p-8 flex flex-col items-center">
+          <div className="max-w-lg ">
+            <h1 className="font-bold text-[#14279b] text-4xl mb-4">Grow your business with</h1>
+            <h2 className="font-bold text-[#14279b] text-4xl mb-8">Akeshya</h2>
+            <p className="text-lg mb-8">
+              We are a team of talented website designers, developers & digital marketeers
+            </p>
+            <Button content="Get Started" className="primary" />
+          </div>
         </div>
-    
-  )
-}
 
-export default Home
+        {/* Image section */}
+        <div className="w-full md:w-1/2 bg-white md:p-2 flex  mt-4 md:mt-0">
+          <Image src="/Assets/images/hero-img.png" alt="hero-image" width={600} height={500}  />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
