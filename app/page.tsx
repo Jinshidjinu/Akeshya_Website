@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import ResponsiveNav from "./Components/Home/Navigation/ResponsiveNav";
 import HomePage from "./Components/Home/Hero/Home";
 import HomeIcons from "./Components/Home/Hero/HomeIcons";
@@ -17,9 +17,9 @@ import "aos/dist/aos.css";
 const Home: React.FC = () => {
   useEffect(() => {
     AOS.init({
-      startEvent: 'DOMContentLoaded',
-      initClassName: 'aos-init',
-      animatedClassName: 'aos-animate',
+      startEvent: "DOMContentLoaded",
+      initClassName: "aos-init",
+      animatedClassName: "aos-animate",
       useClassNames: false,
       disableMutationObserver: false,
       debounceDelay: 50,
@@ -27,16 +27,24 @@ const Home: React.FC = () => {
       offset: 120,
       delay: 0,
       duration: 1200,
-      easing: 'linear',
+      easing: "linear",
       once: true,
       mirror: false,
-      anchorPlacement: 'top-bottom',
+      anchorPlacement: "top-bottom",
     });
   }, []);
 
+  const openNav = () => {
+    console.log("Nav opened");
+  };
+
+  const closeNav = () => {
+    console.log("Nav closed");
+  };
+
   return (
     <div>
-      <ResponsiveNav />
+      <ResponsiveNav openNav={openNav} closeNav={closeNav} />
       <HomePage />
       <HomeIcons />
       <About />
