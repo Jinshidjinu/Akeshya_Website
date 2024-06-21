@@ -5,6 +5,7 @@ import HomeIcons from "./Components/Home/Hero/HomeIcons";
 import About from "./Components/Home/About/About";
 import Services from "./Components/Home/Servicess/Services";
 import Process from "./Components/Home/OurProcess/Process";
+import Features from "./Components/Home/CoreFeatures/Features";
  const Home = ()=>{
   return (
    <div>
@@ -14,6 +15,7 @@ import Process from "./Components/Home/OurProcess/Process";
        <About/>
        <Services/>
        <Process/>
+       <Features/>
    
    </div>
   );

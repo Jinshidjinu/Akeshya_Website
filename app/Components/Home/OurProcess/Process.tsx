@@ -37,8 +37,8 @@ const  Process:React.FC = () => {
         <Headings content='Our Process'
          description='Over the years we’ve evolved a tested method for attaining achievement for each one of our clients.'
           />
-       
-       <div className='grid grid-cols-1 md:grid-cols-2    gap-y-44 md:gap-y-44  sm:gap-10   px-4 sm:px-6 lg:px-10 py-6 w-full h-auto min-h-96'>
+
+       <div className='grid grid-cols-1 md:grid-cols-2    gap-y-44 md:gap-y-44  sm:gap-10 px-4 sm:px-6 lg:px-10  w-full h-auto min-h-96'>
          {processes.map( process => (
            <ProcessCard
               key={process.id}
