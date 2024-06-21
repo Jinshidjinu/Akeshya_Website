@@ -15,7 +15,7 @@ const Nav = () => {
             </div>
 
             <div className=' w-[590px] h-[65px] py-2 px-4 bg-white flex items-center  justify-center'>
-
+                 
                 <ul className='flex  items-center justify-center cursor-pointer text-[15px] text-[#555555] gap-9'>
                     <li>Home</li>
                     <li>About</li>
