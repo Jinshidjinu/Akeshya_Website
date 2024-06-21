@@ -64,3 +64,19 @@
   background-color: #14279b;
   transition: all 0.2s ease;
 }
+
+.image-animation{
+  animation: Bouncing 3s ease-in-out 2s infinite alternate;
+}
+
+@keyframes Bouncing {
+  0%  {
+    transform: translateY(-15px);
+  }
+  50%  {
+    transform: translateY(15px);
+  }
+  100%  {
+    transform: translateY(-15px);
+  }
+}

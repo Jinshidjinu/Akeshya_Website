@@ -25,7 +25,7 @@ const Features: React.FC = () => {
         content='OUR CORE FEATURES'
         description='Akeshya is a forward-thinking and intelligent design firm that is technically and creatively capable of transforming your brand into its best digital self. Our approach to design and development results in compelling, engaging branding and immersive digital experiences that provide a value for money.'
       />
-        <div className='w-full mx-auto px-24 grid gap-5 grid-flow-row auto-rows-max grid-cols-1 lg:grid-cols-4 h-auto'>
+        <div className='w-full mx-auto px-24 grid gap-5 grid-flow-row auto-rows-max grid-cols-1 lg:grid-cols-4 h-auto' data-aos="fade-up">
           {features.map((data) => (
             <FeatureCard
               key={data.id}

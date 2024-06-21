@@ -38,6 +38,9 @@ const Headings: React.FC<HeadingsProps> = ({
         <div 
             className={`${variantClasses} ${sizeClasses} ${className} flex flex-col  `} 
             {...props}
+
+             data-aos="fade-up"
+            
             
         >
           <div className='flex justify-center items-center gap-4'>

@@ -61,11 +61,11 @@ const Contact: React.FC = () => {
     <div>
       <Headings content='CONTACT US ' />
       <div className='w-full min-h-[500px] bg-white flex flex-col md:flex-row justify-center gap-6 text-[#888] p-6'>
-        <div className='w-full md:w-1/3 bg-white'>
+        <div className='w-full md:w-1/3 bg-white' data-aos="fade-up" data-aos-duration="800"  >
           <h3 className='text-[28px] font-Raleway font-bold text-[#14279b]'>Akeshya</h3>
           <p>Designers, developers & marketeers capable of delivering solutions according to your needs</p>
         </div>
-        <div className='w-full md:w-1/4 bg-white flex flex-col gap-4'>
+        <div className='w-full md:w-1/4 bg-white flex flex-col gap-4' data-aos="fade-up" data-aos-duration="900" >
           <div className='flex gap-3 p-2'>
             <i className="ri-map-pin-line text-3xl text-[#14279b]"></i>
             <p>26-2-789, 7th street, Jyothi Nagar, Nellore, Andhra Pradesh 524004</p>
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
             <p>+91 94942 40922</p>
           </div>
         </div>
-        <div className='w-full md:w-1/3 bg-white'>
+        <div className='w-full md:w-1/3 bg-white' data-aos="fade-up" data-aos-duration="1000" >
           <form className="space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"

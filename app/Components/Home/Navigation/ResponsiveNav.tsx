@@ -1,13 +1,21 @@
-import React from 'react'
-import Nav from './Nav'
-import MobileNav from './MobileNav'
-const ResponsiveNav = () => {
-  return (
-    <div>
-        <Nav/>
-        <MobileNav/>
-    </div>
-  )
+import React, { useState } from 'react';
+import Nav from './Nav';
+import MobileNav from './MobileNav';
+
+interface Props {
+  openNav: () => void;
+  closeNav: () => void;
 }
 
-export default ResponsiveNav
+const ResponsiveNav: React.FC<Props> = ({ openNav, closeNav }) => {
+  const [nav, setNav] = useState(false);
+
+  return (
+    <div>
+      <Nav openNav={openNav} />
+      <MobileNav nav={nav} closeNav={closeNav} />
+    </div>
+  );
+};
+
+export default ResponsiveNav;

@@ -32,6 +32,7 @@ const Services: React.FC = () => {
       icon: 'tachometer',
       description:
         "Since the beginning, we at Akeshya have specialised in website maintenance. We recognise the significance of having your business online 24 hours a day, seven days a week, and we've created a system to ensure that we're always available.",
+        
     },
   ];
 
@@ -42,7 +43,7 @@ const Services: React.FC = () => {
         description='Akeshya will serve as your consultant and development partner to help you turn your idea into a reality.'
       />
       
-      <div className='grid justify-around grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-10 items-center w-full h-auto min-h-96'>
+      <div className='grid justify-around grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-10 items-center w-full h-auto min-h-96' data-aos="fade-up"   >
         {services.map(service => (
           <ServiceCard 
             key={service.id}
