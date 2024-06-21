@@ -6,6 +6,7 @@ import About from "./Components/Home/About/About";
 import Services from "./Components/Home/Servicess/Services";
 import Process from "./Components/Home/OurProcess/Process";
 import Features from "./Components/Home/CoreFeatures/Features";
+import Contact from "./Components/Home/Contact/Contact";
  const Home = ()=>{
   return (
    <div>
@@ -16,7 +17,7 @@ import Features from "./Components/Home/CoreFeatures/Features";
        <Services/>
        <Process/>
        <Features/>
-   
+       <Contact/>
    </div>
   );
 }
