@@ -4,6 +4,7 @@ import HomePage from "./Components/Home/Hero/Home";
 import HomeIcons from "./Components/Home/Hero/HomeIcons";
 import About from "./Components/Home/About/About";
 import Services from "./Components/Home/Servicess/Services";
+import Process from "./Components/Home/OurProcess/Process";
  const Home = ()=>{
   return (
    <div>
@@ -12,6 +13,7 @@ import Services from "./Components/Home/Servicess/Services";
        <HomeIcons/>
        <About/>
        <Services/>
+       <Process/>
    
    </div>
   );

@@ -56,3 +56,11 @@
   color: white;
   transition: all 0.4s ease-in-out;
 }
+
+.process_card:hover{
+  width: 700px;
+  height: 150px;
+  border-radius: 5px;
+  background-color: #14279b;
+  transition: all 0.2s ease;
+}
