@@ -26,33 +26,27 @@ const Headings: React.FC<HeadingsProps> = ({
     };
 
     const variants = {
-        primary: 'bg-white text-[#222222] w-full h-[150px]  text-[32px] font-bold font-family text-center text-3xl gap-6 flex items-center justify-center',
+        primary: 'bg-white text-[#222222] w-full h-auto text-[32px] font-bold text-center gap-6 flex flex-col items-center justify-center py-6',
         secondary: 'text-red-400'
     };
 
-    // Type assertion for variant
-    const variantClasses = variants[variant as 'primary' | 'secondary'];
+    const variantClasses = variants[variant];
     const sizeClasses = sizes[size] || sizes.md;
 
     return (
         <div 
-            className={`${variantClasses} ${sizeClasses} ${className} flex flex-col  `} 
+            className={`${variantClasses} ${sizeClasses} ${className} my-14`} 
             {...props}
-
-             data-aos="fade-up"
-            
-            
+            data-aos="fade-up"
         >
-          <div className='flex justify-center items-center gap-4'>
-            <hr className='h-1 w-[80px] bg-blue-900' />
-
-            {content}
-            <hr className='h-1 w-[60px] bg-blue-900' />
-
-          </div>
+            <div className='flex justify-center items-center gap-4'>
+                <hr className='h-1 w-[80px] bg-blue-900' />
+                <span className='text-[#444343e7]'>{content}</span>
+                <hr className='h-1 w-[60px] bg-blue-900' />
+            </div>
              
-              {description && (
-                <p className='text-sm text-[#444444] font-sans  uppercase-none   '>
+            {description && (
+                <p className=' text-[#555555dd] font-medium font-sans px-10 text-[1.03rem] mt-2'>
                     {description}
                 </p>
             )}

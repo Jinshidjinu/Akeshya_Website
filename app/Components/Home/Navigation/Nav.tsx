@@ -1,37 +1,61 @@
-import React from 'react';
-import Image from 'next/image';
-import Logo from '../../../../public/Assets/images/logo.png';
-import { Bars3Icon } from '@heroicons/react/16/solid';
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import Image from "next/image";
+import Logo from "../../../../public/Assets/images/logo.png";
+import { Bars3Icon } from "@heroicons/react/16/solid";
 
 interface Props {
   openNav: () => void;
 }
 
 const Nav: React.FC<Props> = ({ openNav }) => {
+  const [scroll, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <div className='w-[100%] h-[16vh] px-2 flex flex-col justify-center shadow-gray-400 bg-white' style={{ boxShadow: "0px 0px 10px 1px #eaeaea" }}>
-        <div className='flex justify-between items-center'>
-          <div className='w-[430px] h-[60px] flex items-center justify-center tracking-widest bg-white'>
-            <Image alt='logo' className='w-[65px] h-[65px] cursor-pointer' src={Logo} />
-            <span className='text-blue-900 cursor-pointer font-[700] text-[30px] leading-none font-Raleway'>AKESHYA</span>
-          </div>
+    <div
+      className={`fixed  z-50 duration-200 ease-out top-0 right-0 left-0  w-full  xl:px-24 2xl:px-32 px-4 sm:px-6 md:px-16 lg:px-20 ${
+        scroll ? "h-24" : "h-28"
+      }  flex flex-col justify-center ${
+        scroll ? "shadow-custom" : "shadow-none"
+      } bg-white `}
+    >
+      <div className="container mx-auto flex justify-between px-2 md:px-0 items-center">
+        <div className="flex items-center">
+          <Image alt="logo" className="w-16 h-16 cursor-pointer" src={Logo} />
+          <span className="text-blue-900 cursor-pointer font-bold text-2xl leading-none font-Raleway ml-2">
+            AKESHYA
+          </span>
+        </div>
 
-         <div>
-         <div className=' w-[590px] h-[65px] py-2 px-4 bg-white flex items-center justify-center'>
-            <ul className='hidden md:flex items-center justify-center cursor-pointer text-[15px] text-[#555555] gap-9'>
-              <li>Home</li>
-              <li>About</li>
-              <li>Service</li>
-            </ul>
+        <div className="hidden md:flex items-center space-x-8">
+          <ul className="flex items-center space-x-6 text-gray-600">
+            <li className="cursor-pointer">Home</li>
+            <li className="cursor-pointer">About</li>
+            <li className="cursor-pointer">Service</li>
+          </ul>
+          <button className="ml-4 px-6 py-2 bg-blue-900 text-white rounded-full text-sm">
+            Contact us
+          </button>
+        </div>
 
-            <button className='w-[130px] hidden md:block ml-5 h-[40px] bg-[#14279b] text-[#fff] rounded-full font-[400] text-[15px] '>Contact us</button>
-
-          </div>
-            <div className='pr-6' onClick={openNav}>
-              <Bars3Icon className='w-[2rem] md:hidden h-[2rem] cursor-pointer ' />
-            </div>
-         </div>
+        <div className="md:hidden" onClick={openNav}>
+          <Bars3Icon className="w-8 h-8 text-gray-800 cursor-pointer " />
         </div>
       </div>
     </div>
