@@ -38,7 +38,7 @@ const Nav: React.FC<Props> = ({ openNav }) => {
       <div className="container mx-auto flex justify-between px-2 md:px-0 items-center">
         <div className="flex items-center">
           <Image alt="logo" className="w-16 h-16 cursor-pointer" src={Logo} />
-          <span className="text-blue-900 cursor-pointer font-bold text-2xl leading-none font-Raleway ml-2">
+          <span className="text-blue-900 cursor-pointer font-bold text-3xl leading-none font-Raleway ml-2">
             AKESHYA
           </span>
         </div>
