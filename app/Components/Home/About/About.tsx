@@ -9,7 +9,10 @@ import CountUp from "react-countup";
 const About = () => {
   return (
     <div>
+        {/* Section heading */}
       <Headings content="ABOUT US" />
+      
+       {/* Main content section */}
       <div className="bg-white w-full h-auto flex justify-center items-center py-10 md:py-0">
         <div className="w-[90%] md:w-[80%] h-auto md:h-[240px] bg-white flex flex-col md:flex-row">
           <div data-aos="fade-up" className="w-full md:w-[64%] h-full bg-white flex flex-col gap-7 text-[#444444] text-md p-5 md:p-0">

@@ -37,19 +37,10 @@ const Home: React.FC = () => {
     });
   }, []);
 
-  // Function to handle opening the navigation not implemented here
-  const openNav = () => {
-    console.log("Nav opened");
-  };
-
-  // Function to handle closing the navigation not implemented here
-  const closeNav = () => {
-    console.log("Nav closed");
-  };
 
   return (
     <div>
-      <ResponsiveNav openNav={openNav} closeNav={closeNav} />
+      <ResponsiveNav  />
       <HomePage />
       <HomeIcons />
       <About />
@@ -58,7 +49,7 @@ const Home: React.FC = () => {
       <div id="services" ref={servicesRef}>
         <Services />
       </div>
-      
+
       <Process />
       <Features />
       <Contact />

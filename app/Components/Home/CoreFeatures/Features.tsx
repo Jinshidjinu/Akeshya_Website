@@ -1,8 +1,9 @@
-import React from 'react'
-import Headings from '../../Shared/Headings'
-import FeatureCard from '../../Shared/FeatureCard'
-import 'remixicon/fonts/remixicon.css'
+import React from 'react';
+import Headings from '../../Shared/Headings'; 
+import FeatureCard from '../../Shared/FeatureCard';
+import 'remixicon/fonts/remixicon.css';
 
+// Array of features data
 const features = [
   { id: 1, title: 'Web design', icon: 'ri-window-line', color: '#ffbb2c' },
   { id: 2, title: 'Development', icon: 'ri-code-box-line', color: '#5578ff' },
@@ -21,23 +22,26 @@ const features = [
 const Features: React.FC = () => {
   return (
     <div>
+      {/* Section heading */}
       <Headings
         content='OUR CORE FEATURES'
         description='Akeshya is a forward-thinking and intelligent design firm that is technically and creatively capable of transforming your brand into its best digital self. Our approach to design and development results in compelling, engaging branding and immersive digital experiences that provide a value for money.'
       />
-        <div className='w-full mx-auto px-24 grid gap-5 grid-flow-row auto-rows-max grid-cols-1 lg:grid-cols-4 h-auto' data-aos="fade-up">
-          {features.map((data) => (
-            <FeatureCard
-              key={data.id}
-              title={data.title}
-              icon={data.icon} 
-              color={data.color}
-            />
-          ))}
-        </div>
       
+      {/* Grid layout for feature cards */}
+      <div className='w-full mx-auto px-24 grid gap-5 grid-flow-row auto-rows-max grid-cols-1 lg:grid-cols-4 h-auto' data-aos="fade-up">
+        {features.map((data) => (
+          // Feature card component
+          <FeatureCard
+            key={data.id}
+            title={data.title}
+            icon={data.icon} 
+            color={data.color}
+          />
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Features
+export default Features;

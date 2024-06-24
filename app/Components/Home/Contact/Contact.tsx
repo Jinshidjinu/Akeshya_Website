@@ -1,9 +1,7 @@
-"use client"; 
-
 import React, { useState, FormEvent, ChangeEvent } from 'react';
-import emailjs from '@emailjs/browser';
-import Headings from '../../Shared/Headings';
-import 'remixicon/fonts/remixicon.css';
+import emailjs from '@emailjs/browser'; // Importing emailjs library for sending emails
+import Headings from '../../Shared/Headings'; // Assuming Headings component path
+import 'remixicon/fonts/remixicon.css'; // Importing Remixicon CSS for icons
 
 interface FormData {
   name: string;
@@ -20,6 +18,7 @@ const Contact: React.FC = () => {
     message: ''
   });
 
+  // Handle form input changes
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -28,27 +27,27 @@ const Contact: React.FC = () => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
-    emailjs
-      .sendForm(
-        'service_x6sbeak', 
-        'template_mzdo0sf', 
-        e.currentTarget,
-        'mua2_GzNagEn4xvd8'
-      )
-      .then(
-        (result) => {
-          console.log('SUCCESS!', result.text);
-          alert('Message sent successfully!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-          alert('Failed to send message. Please try again.');
-        },
-      );
 
+    // Sending email using emailjs
+    emailjs.sendForm(
+      'service_x6sbeak', // Service ID from emailjs dashboard
+      'template_mzdo0sf', // Template ID from emailjs dashboard
+      e.currentTarget, // Form element
+      'mua2_GzNagEn4xvd8' // User ID from emailjs dashboard
+    )
+    .then(
+      (result) => {
+        alert('Message sent successfully!'); 
+      },
+      (error) => {
+        alert('Failed to send message. Please try again.'); 
+      }
+    );
+
+    // Resetting form data after submission
     setFormData({
       name: '',
       email: '',
@@ -59,13 +58,19 @@ const Contact: React.FC = () => {
 
   return (
     <div>
-      <Headings content='CONTACT US ' />
+      {/* Section heading */}
+      <Headings content='CONTACT US' />
+
+      {/* Contact information and form */}
       <div className='w-full min-h-[500px] bg-white flex flex-col md:flex-row justify-center gap-6 text-[#888] p-6'>
-        <div className='w-full md:w-1/3 bg-white' data-aos="fade-up" data-aos-duration="800"  >
+        {/* Contact information */}
+        <div className='w-full md:w-1/3 bg-white' data-aos="fade-up" data-aos-duration="800">
           <h3 className='text-[28px] font-Raleway font-bold text-[#14279b]'>Akeshya</h3>
           <p>Designers, developers & marketeers capable of delivering solutions according to your needs</p>
         </div>
-        <div className='w-full md:w-1/4 bg-white flex flex-col gap-4' data-aos="fade-up" data-aos-duration="900" >
+        
+        {/* Contact details */}
+        <div className='w-full md:w-1/4 bg-white flex flex-col gap-4' data-aos="fade-up" data-aos-duration="900">
           <div className='flex gap-3 p-2'>
             <i className="ri-map-pin-line text-3xl text-[#14279b]"></i>
             <p>26-2-789, 7th street, Jyothi Nagar, Nellore, Andhra Pradesh 524004</p>
@@ -79,8 +84,11 @@ const Contact: React.FC = () => {
             <p>+91 94942 40922</p>
           </div>
         </div>
-        <div className='w-full md:w-1/3 bg-white' data-aos="fade-up" data-aos-duration="1000" >
+
+        {/* Contact form */}
+        <div className='w-full md:w-1/3 bg-white' data-aos="fade-up" data-aos-duration="1000">
           <form className="space-y-4" onSubmit={handleSubmit}>
+            {/* Name input */}
             <input
               type="text"
               name="name"
@@ -90,6 +98,7 @@ const Contact: React.FC = () => {
               className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
             />
+            {/* Email input */}
             <input
               type="email"
               name="email"
@@ -99,15 +108,17 @@ const Contact: React.FC = () => {
               className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
             />
+            {/* Subject input */}
             <input
               type="text"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
               placeholder="Subject"
-              className="w-full px-3 py-2  border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800"
+              className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800"
               required
             />
+            {/* Message textarea */}
             <textarea
               name="message"
               value={formData.message}
@@ -116,6 +127,7 @@ const Contact: React.FC = () => {
               className="w-full h-16 md:h-26 lg:h-24 px-3 py-6 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 resize-y"
               required
             ></textarea>
+            {/* Submit button */}
             <div className='w-full bg-white flex justify-center items-center h-[80px]'>
               <button
                 type="submit"
@@ -128,7 +140,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Contact;
