@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import ResponsiveNav from "./Components/Home/Navigation/ResponsiveNav";
 import HomePage from "./Components/Home/Hero/Home";
 import HomeIcons from "./Components/Home/Hero/HomeIcons";
 import About from "./Components/Home/About/About";
-import Services from "./Components/Home/Servicess/Services";
+import Services from "./Components/Home/Servicess/Services"; 
 import Process from "./Components/Home/OurProcess/Process";
 import Features from "./Components/Home/CoreFeatures/Features";
 import Contact from "./Components/Home/Contact/Contact";
@@ -15,6 +15,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Home: React.FC = () => {
+  const servicesRef = useRef<HTMLDivElement>(null);
+
+  // Initialize AOS library for animations when the component mounts
   useEffect(() => {
     AOS.init({
       startEvent: "DOMContentLoaded",
@@ -34,10 +37,12 @@ const Home: React.FC = () => {
     });
   }, []);
 
+  // Function to handle opening the navigation not implemented here
   const openNav = () => {
     console.log("Nav opened");
   };
 
+  // Function to handle closing the navigation not implemented here
   const closeNav = () => {
     console.log("Nav closed");
   };
@@ -48,7 +53,12 @@ const Home: React.FC = () => {
       <HomePage />
       <HomeIcons />
       <About />
-      <Services />
+
+      {/* Services section with a ref to scroll to */}
+      <div id="services" ref={servicesRef}>
+        <Services />
+      </div>
+      
       <Process />
       <Features />
       <Contact />

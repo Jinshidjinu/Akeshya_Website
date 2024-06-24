@@ -1,4 +1,4 @@
-"use client"; // This marks the component as a Client Component
+"use client"; 
 
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 import emailjs from '@emailjs/browser';

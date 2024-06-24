@@ -2,13 +2,20 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "../../../../public/Assets/images/logo.png";
 import { Bars3Icon } from "@heroicons/react/16/solid";
-
+import Link from "next/link";
 interface Props {
   openNav: () => void;
 }
 
 const Nav: React.FC<Props> = ({ openNav }) => {
   const [scroll, setIsScrolled] = useState(false);
+
+  const handleNavClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,8 +27,6 @@ const Nav: React.FC<Props> = ({ openNav }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -45,13 +50,19 @@ const Nav: React.FC<Props> = ({ openNav }) => {
 
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex items-center space-x-6 text-gray-600">
+          <Link href={`/`} >
             <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">About</li>
-            <li className="cursor-pointer">Service</li>
+            </Link>
+            <Link href={`/about`} >
+              <li className="cursor-pointer">About</li>
+            </Link>
+            <li className="cursor-pointer" onClick={() => handleNavClick("services")}>Service</li>
           </ul>
+          <Link href={`/contact`} >
           <button className="ml-4 px-6 py-2 bg-blue-900 text-white rounded-full text-sm">
             Contact us
           </button>
+          </Link>
         </div>
 
         <div className="md:hidden" onClick={openNav}>

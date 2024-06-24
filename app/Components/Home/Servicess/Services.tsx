@@ -43,7 +43,7 @@ const Services: React.FC = () => {
         description='Akeshya will serve as your consultant and development partner to help you turn your idea into a reality.'
       />
       
-      <div className='grid justify-around grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-10 items-center w-full h-auto min-h-96' data-aos="fade-up"   >
+      <div className='grid justify-around grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-10 items-center w-full h-auto min-h-96' data-aos="fade-up">
         {services.map(service => (
           <ServiceCard 
             key={service.id}
